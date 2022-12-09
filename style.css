@@ -1,0 +1,71 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+html {
+  font-family: system-ui;
+}
+
+body {
+  font-size: 1.25rem;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.page-title {
+  font-size: clamp(2rem, 5vw + 1rem, 4rem);
+}
+
+button {
+  padding: 0.5rem 1rem;
+  margin-bottom: 3rem;
+}
+
+.mask-container {
+  position: relative;
+}
+
+.color-image {
+  position: absolute;
+  inset: 0;
+  background-image: url("color-image.jpg");
+  background-size: cover;
+
+  -webkit-mask-image: url("image-mask.png");
+  -webkit-mask-size: cover;
+  -webkit-mask-position: 0% 0%;
+  mask-image: url("image-mask.png");
+  mask-size: cover;
+  mask-position: 0% 0%;
+
+  transition: 
+    -webkit-mask-position ;
+}
+
+.mask-animation {
+  animation: 
+    addColor 700ms steps(24) forwards;
+}
+
+@keyframes addColor {
+  0% {
+    -webkit-mask-position: 0% 0%;
+    mask-position: 0% 0%;
+  }
+  100% {
+    -webkit-mask-position: 100% 0%;
+    mask-position: 100% 0%;
+  }
+}
