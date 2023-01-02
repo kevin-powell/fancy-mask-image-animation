@@ -51,7 +51,7 @@ button {
   mask-position: 0% 0%;
 
   transition: 
-    -webkit-mask-position ;
+    mask-position, -webkit-mask-position;
 }
 
 .mask-animation {
